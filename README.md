@@ -13,7 +13,7 @@
 
 # Download & Installation
 
-- Download https://github.com/BaziForYou/esx_upgraded_duty/archive/main.zip
+- Download https://github.com/BaziForYou/MugShotBase64/archive/main.zip
 - Put it in the `resources` folder 
 
 ## Installation	
