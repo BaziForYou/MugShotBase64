@@ -4,6 +4,8 @@
 - So fast don't need to wait much to get that
 - Standalone it doesn't use any function from anywhere
 - Can make a mugshot from any ped, not just self player
+- Optimize and get low usage (0.00 on idle and 0.01 on converting)
+- Clean coding
 
 # Resource preview
 [Video](https://youtu.be/DHog499Fkkk)
@@ -27,7 +29,7 @@ start MugShotBase64
 
 | Export                         | Description                               | Parameter(s)  | Return type          |
 |--------------------------------|-------------------------------------------|---------------|----------------------|
-| GetMugShotBase64               | Returns base64 string                     | string,bool   | string               |
+| GetMugShotBase64               | Returns base64 string                     | Ped Hanel, boo(Transpert)   | string |
 
 
 
