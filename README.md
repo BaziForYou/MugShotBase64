@@ -1,12 +1,12 @@
 # Features
-- Can cache image as text any where (json,sql,txt)
-- No need upload anywhere
-- So fast dont need wait much to get that
-- Srandalone it dont use any founction from anywhere
-- Can make mugshot from any ped not just self player
+- Can cache image as text anywhere (JSON, SQL, TXT)
+- No need to upload anywhere
+- So fast don't need to wait much to get that
+- Standalone it doesn't use any function from anywhere
+- Can make a mugshot from any ped, not just self player
 
 # Resource preview
-[Video](https://streamable.com/)
+[Video](https://youtu.be/DHog499Fkkk)
 
 # Requirements
 - Brain
