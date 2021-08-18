@@ -27,7 +27,7 @@ start MugShotBase64
 
 | Export                         | Description                               | Parameter(s)  | Return type          |
 |--------------------------------|-------------------------------------------|---------------|----------------------|
-| GetMugShotBase64               | Returns base64 string                     | string,boo    | string               |
+| GetMugShotBase64               | Returns base64 string                     | string,bool   | string               |
 
 
 
