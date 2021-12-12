@@ -29,7 +29,7 @@ start MugShotBase64
 
 | Export                         | Description                               | Parameter(s)  | Return type          |
 |--------------------------------|-------------------------------------------|---------------|----------------------|
-| GetMugShotBase64               | Returns base64 string                     | Ped Hanel, boo(Transpert)   | string |
+| GetMugShotBase64               | Returns base64 string                     | Ped Hanel, bool(Transpert)   | string |
 
 
 
