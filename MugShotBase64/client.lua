@@ -3,7 +3,7 @@ local MugshotsCache = {}
 local Answers = {}
 
 function GetMugShotBase64(Ped,Tasparent)
-	if not Ped then return end
+	if not Ped then return "" end
 	id = id + 1 
 	
 	local Handle
@@ -32,25 +32,21 @@ function GetMugShotBase64(Ped,Tasparent)
 		id = id,
 	})
 	
-	while not Answers[id] do
-		Citizen.Wait(10)
-	end
+    local p = promise.new()
+	Answers[id] = p
 	
-	if MugshotsCache[id] then
-		UnregisterPedheadshot(MugshotsCache[id])
-		MugshotsCache[id] = nil
-	end
-	
-	local CallBack = Answers[id]
-	Answers[id] = nil
-	
-	return CallBack
+	return Citizen.Await(p)
 end
+exports("GetMugShotBase64", GetMugShotBase64)
 
 RegisterNUICallback('Answer', function(data)
-	Answers[data.Id] = data.Answer
+	if MugshotsCache[data.Id] then
+		UnregisterPedheadshot(MugshotsCache[data.Id])
+		MugshotsCache[data.Id] = nil
+	end
+	Answers[data.Id].promise:resolve(data.Answer)
+	Answers[data.Id] = nil
 end)
-
 
 AddEventHandler('onResourceStop', function(resourceName)
   if (GetCurrentResourceName() ~= resourceName) then
@@ -59,6 +55,8 @@ AddEventHandler('onResourceStop', function(resourceName)
   for k,v in pairs(MugshotsCache) do
 	UnregisterPedheadshot(v)
   end
+  MugshotsCache = {}
+  id = 0
 end)
 
 RegisterCommand("base64mugshotNormal",function(source,args,rawCommand)

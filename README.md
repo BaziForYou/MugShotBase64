@@ -31,7 +31,11 @@ start MugShotBase64
 |--------------------------------|-------------------------------------------|---------------|----------------------|
 | GetMugShotBase64               | Returns base64 string                     | Ped Hanel, bool(Transpert)   | string |
 
+##### Example
 
+```lua
+local MugShot = exports["MugShotBase64"]:GetMugShotBase64(PlayerPedId(), true)
+```
 
 # Credits
 - [codegrepper](https://www.codegrepper.com/code-examples/javascript/convert+image+to+base64+using+javascript)

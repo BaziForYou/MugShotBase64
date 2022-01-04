@@ -26,7 +26,7 @@ function Convert(pMugShotTxd,id) {
 		tempUrl = 'https://upload.wikimedia.org/wikipedia/commons/thumb/b/bc/Unknown_person.jpg/434px-Unknown_person.jpg';   
 	}
     getBase64Image(tempUrl, function(dataUrl) {
-      	$.post('http://MugShotBase64/Answer', JSON.stringify({
+      	$.post('https://${GetParentResourceName()}/Answer', JSON.stringify({
 			Answer: dataUrl,
 			Id: id,
 		}));

@@ -1,4 +1,4 @@
-fx_version 'adamant'
+fx_version 'cerulean'
 game 'gta5'
 
 name "MugShotBase64"
@@ -14,5 +14,3 @@ files {
 client_script {
   "client.lua",
 }
-
-export "GetMugShotBase64"
