@@ -32,7 +32,7 @@ function GetMugShotBase64(Ped,Tasparent)
 		id = id,
 	})
 	
-    local p = promise.new()
+	local p = promise.new()
 	Answers[id] = p
 	
 	return Citizen.Await(p)
