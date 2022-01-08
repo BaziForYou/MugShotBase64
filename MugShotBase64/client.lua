@@ -44,7 +44,7 @@ RegisterNUICallback('Answer', function(data)
 		UnregisterPedheadshot(MugshotsCache[data.Id])
 		MugshotsCache[data.Id] = nil
 	end
-	Answers[data.Id].promise:resolve(data.Answer)
+	Answers[data.Id]:resolve(data.Answer)
 	Answers[data.Id] = nil
 end)
 
