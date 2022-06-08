@@ -8,7 +8,7 @@ author "BaziForYou#9907"
 ui_page 'html/index.html'
 
 files {
-  "html/js/script.js",
+  "html/js/*",
   "html/index.html",
 }
 client_script {

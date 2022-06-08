@@ -6,13 +6,7 @@ function GetMugShotBase64(Ped,Tasparent)
 	if not Ped then return "" end
 	id = id + 1 
 	
-	local Handle
-	
-	if Tasparent then
-		Handle = RegisterPedheadshotTransparent(Ped)
-	else
-		Handle = RegisterPedheadshot(Ped)
-	end
+	local Handle = RegisterPedheadshot(Ped)
 	
 	local timer = 2000
 	while ((not Handle or not IsPedheadshotReady(Handle) or not IsPedheadshotValid(Handle)) and timer > 0) do
@@ -29,6 +23,7 @@ function GetMugShotBase64(Ped,Tasparent)
 	SendNUIMessage({
 		type = 'convert',
 		pMugShotTxd = MugShotTxd,
+		removeImageBackGround = Tasparent or false,
 		id = id,
 	})
 	
