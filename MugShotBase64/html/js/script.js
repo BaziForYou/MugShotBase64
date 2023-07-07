@@ -6,18 +6,28 @@ async function getBase64Image(src, removeImageBackGround, callback, outputFormat
 	async function loadFunc() {
 	  const canvas = document.createElement('canvas');
 	  const ctx = canvas.getContext('2d');
+	  var convertingCanvas = canvas;
 	  if (removeImageBackGround) {
-		  var SelectedSize = 320
-		  canvas.height = SelectedSize;
-		  canvas.width = SelectedSize;
-		  ctx.drawImage(img, 0, 0, SelectedSize, SelectedSize);
-		  await removebackground(canvas);
+		  var selectedSize = 320
+		  canvas.height = selectedSize;
+		  canvas.width = selectedSize;
+		  ctx.drawImage(img, 0, 0, selectedSize, selectedSize);
+		  await removeBackGround(canvas);
+		  const canvas2 = document.createElement('canvas');
+		  const ctx2 = canvas2.getContext('2d');
+		  canvas2.height = 64;
+		  canvas2.width = 64;
+		  ctx2.drawImage(canvas, 0, 0, selectedSize, selectedSize, 0, 0, img.naturalHeight, img.naturalHeight);
+		  convertingCanvas = canvas2;
 	  } else {
 		  canvas.height = img.naturalHeight;
 		  canvas.width = img.naturalWidth;
 		  ctx.drawImage(img, 0, 0);
 	  }
-	  let dataURL = canvas.toDataURL(outputFormat);
+	  var dataURL = convertingCanvas.toDataURL(outputFormat);
+	  canvas.remove();
+	  convertingCanvas.remove();
+	  img.remove();
 	  callback(dataURL);
 	};
   
@@ -29,7 +39,7 @@ async function getBase64Image(src, removeImageBackGround, callback, outputFormat
 }
 
 async function Convert(pMugShotTxd, removeImageBackGround, id) {
-	let tempUrl = 'https://nui-img/' + pMugShotTxd + '/' + pMugShotTxd + '?t=' + String(Math.round(new Date().getTime() / 1000));
+	var tempUrl = `https://nui-img/${pMugShotTxd}/${pMugShotTxd}?t=${String(Math.round(new Date().getTime() / 1000))}`;
 	if (pMugShotTxd == 'none') {
 		tempUrl = 'https://cdn.discordapp.com/attachments/555420890444070912/983953950652903434/unknown.png';   
 	}
@@ -42,8 +52,8 @@ async function Convert(pMugShotTxd, removeImageBackGround, id) {
 }
 
 // https://www.youtube.com/watch?v=GV6LSAYzEgc
-async function removebackground(SentCanvas) {
-	const canvas = SentCanvas;
+async function removeBackGround(sentCanvas) {
+	const canvas = sentCanvas;
 	const ctx = canvas.getContext('2d');
 	
 	// Loading the model
@@ -67,7 +77,7 @@ async function removebackground(SentCanvas) {
 	const newImg = ctx.createImageData(canvas.width, canvas.height);
 	const newImgData = newImg.data;
 	
-	for(let i=0; i<map.length; i++) {
+	for(var i=0; i<map.length; i++) {
 	//The data array stores four values for each pixel
 	const [r, g, b, a] = [imgData[i*4], imgData[i*4+1], imgData[i*4+2], imgData[i*4+3]];
 	[
