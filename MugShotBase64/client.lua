@@ -4,10 +4,10 @@ local Answers = {}
 
 function GetMugShotBase64(Ped,Tasparent)
 	if not Ped then return "" end
-	id = id + 1 
-	
+	id = id + 1
+
 	local Handle = RegisterPedheadshot(Ped)
-	
+
 	local timer = 2000
 	while ((not Handle or not IsPedheadshotReady(Handle) or not IsPedheadshotValid(Handle)) and timer > 0) do
 		Citizen.Wait(10)
@@ -26,10 +26,10 @@ function GetMugShotBase64(Ped,Tasparent)
 		removeImageBackGround = Tasparent or false,
 		id = id,
 	})
-	
+
 	local p = promise.new()
 	Answers[id] = p
-	
+
 	return Citizen.Await(p)
 end
 exports("GetMugShotBase64", GetMugShotBase64)
