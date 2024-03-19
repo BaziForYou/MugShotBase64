@@ -9,6 +9,7 @@ ui_page 'html/index.html'
 
 files {
   "html/js/*",
+  "html/js/models/*",
   "html/index.html",
 }
 client_script {

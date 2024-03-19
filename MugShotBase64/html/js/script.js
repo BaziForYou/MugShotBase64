@@ -61,7 +61,8 @@ async function removeBackGround(sentCanvas) {
     architecture: 'MobileNetV1',
     outputStride: 16,
     multiplier: 0.75,
-    quantBytes: 2
+    quantBytes: 2,
+    modelUrl: "./js/models/model-stride16.json"
   });
 
   // Segmentation
