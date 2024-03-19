@@ -41,7 +41,7 @@ async function getBase64Image(src, removeImageBackGround, callback, outputFormat
 async function Convert(pMugShotTxd, removeImageBackGround, id) {
   var tempUrl = `https://nui-img/${pMugShotTxd}/${pMugShotTxd}?t=${String(Math.round(new Date().getTime() / 1000))}`;
   if (pMugShotTxd == 'none') {
-    tempUrl = 'https://cdn.discordapp.com/attachments/555420890444070912/983953950652903434/unknown.png';   
+    tempUrl = './img/failSafe.png';   
   }
   getBase64Image(tempUrl, removeImageBackGround, function(dataUrl) {
     $.post(`https://${GetParentResourceName()}/Answer`, JSON.stringify({
