@@ -38,4 +38,4 @@ local MugShot = exports["MugShotBase64"]:GetMugShotBase64(PlayerPedId(), true)
 ```
 
 # Credits
-- [codegrepper]([https://www.codegrepper.com/code-examples/javascript/convert+image+to+base64+using+javascript](https://web.archive.org/web/20250325103502/https://www.grepper.com/answers/722607/get+image+base64+javascript))
+- [codegrepper](https://web.archive.org/web/20250325103502/https://www.grepper.com/answers/722607/get+image+base64+javascript)
