@@ -3,7 +3,7 @@
 - No need to upload anywhere
 - So fast don't need to wait much to get that
 - Standalone it doesn't use any function from anywhere
-- Can make a mugshot from any ped, not just self player
+- Can make a mugshot from any ped, not just self-player
 - Optimize and get low usage (0.00 on idle and 0.01 on converting)
 - Clean coding
 
@@ -38,4 +38,4 @@ local MugShot = exports["MugShotBase64"]:GetMugShotBase64(PlayerPedId(), true)
 ```
 
 # Credits
-- [codegrepper](https://www.codegrepper.com/code-examples/javascript/convert+image+to+base64+using+javascript)
+- [codegrepper]([https://www.codegrepper.com/code-examples/javascript/convert+image+to+base64+using+javascript](https://web.archive.org/web/20250325103502/https://www.grepper.com/answers/722607/get+image+base64+javascript))
